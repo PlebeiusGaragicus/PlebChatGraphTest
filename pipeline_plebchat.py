@@ -176,3 +176,23 @@ class Pipeline:
             # # except requests.exceptions.RequestException as e:
             #     # TODO: give an ALERT to the system admin!
             #     yield f"""⛓️‍💥 uh oh!\nSomething broke.\nThe server may be down.\n{e}"""
+
+
+"""
+
+curl --request POST \
+  --url http://localhost:50974/runs/stream \
+  --header 'Content-Type: application/json' \
+  --data '{
+  "assistant_id": "plebchat_agent",
+  "input": {"messages": [{"role": "user", "content": "what rhymes with orange?"}]},
+  "metadata": {},
+  "config": {
+    "configurable": {}
+  },
+  "stream_mode": [
+    "messages"
+  ]
+}'
+
+"""
